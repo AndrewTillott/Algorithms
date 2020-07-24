@@ -1,4 +1,27 @@
 /*
+Given the array arr, iterate through and remove each element starting from the first element (the 0 index) until the function func returns true when the iterated element is passed through it.
+
+Then return the rest of the array once the condition is satisfied, otherwise, arr should be returned as an empty array.
+*/
+
+function dropElements(arr, func) {
+  
+  let index = arr.findIndex(func);
+  if(index >=0){
+    return arr.slice(index,);
+  } else{
+    return []
+  }
+
+}
+
+console.log(dropElements([1, 2, 3], function(n) {return n < 3; }));
+
+
+console.log(dropElements([1, 2, 3, 4], function(n) {return n >= 3;}));
+
+
+/*
 A prime number is a whole number greater than 1 with exactly two divisors: 1 and itself. For example, 2 is a prime number because it is only divisible by 1 and 2. In contrast, 4 is not prime since it is divisible by 1, 2 and 4.
 
 Rewrite sumPrimes so it returns the sum of all prime numbers that are less than or equal to num.
